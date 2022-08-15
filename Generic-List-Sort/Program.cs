@@ -8,7 +8,7 @@ namespace Generic_List_Sort
     {
         static void Main(string[] args)
         {
-            
+
             List<string> _list_str = new List<string>();
             _list_str.Add("가");
             _list_str.Add("가가");
@@ -23,6 +23,7 @@ namespace Generic_List_Sort
             _list_str.Add("가갇");
             _list_str.Add("Name");
 
+            //test 1.
             _list_str.Sort(new Comparer_String());
 
             Console.WriteLine("문자열 List 출력");
@@ -31,6 +32,17 @@ namespace Generic_List_Sort
                 Console.WriteLine(_list_str[i]);
             }
             Console.WriteLine("------------------------------------");
+
+            //test 2.
+            _list_str.Sort();
+
+            Console.WriteLine("문자열 List 출력");
+            for (int i = 0; i < _list_str.Count; i++)
+            {
+                Console.WriteLine(_list_str[i]);
+            }
+            Console.WriteLine("------------------------------------");
+
 
             List<int> _list_value = new List<int>();
 
@@ -45,16 +57,42 @@ namespace Generic_List_Sort
             _list_value.Add(890564);
             _list_value.Add(123065);
 
+            // test 3. 기본 sort 오름차순
+            _list_value.Sort();
+            Console.WriteLine("정수형 List 출력");
+            for (int i = 0; i < _list_value.Count; i++)
+            {
+                Console.WriteLine(_list_value[i]);
+            }
+
+            // test 4. 내림차순
             _list_value.Sort(new Comparer_Int_descend());
             Console.WriteLine("정수형 List 출력");
             for (int i = 0; i < _list_value.Count; i++)
             {
                 Console.WriteLine(_list_value[i]);
             }
+
+            // test 5. 오름차순
+            _list_value.Sort(new Comparer_Int_ascend());
+            Console.WriteLine("정수형 List 출력");
+            for (int i = 0; i < _list_value.Count; i++)
+            {
+                Console.WriteLine(_list_value[i]);
+            }
+
+            //test 6.Reverse 기능 사용
+            _list_value.Reverse();
+            Console.WriteLine("정수형 List Reverse 출력");
+            for (int i = 0; i < _list_value.Count; i++)
+            {
+                Console.WriteLine(_list_value[i]);
+            }
+
         }
     }
 
-    //문자열 정렬 (스펠링 순서) 영어 -> 한글
+    //문자열 정렬 (스펠링 순서) 영어 -> 한글 / 오름차순
     public class Comparer_String : IComparer, IComparer<string>
     {
         public int Compare(object x, object y)
