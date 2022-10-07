@@ -92,7 +92,7 @@ namespace Generic_List_Sort
 
             //test 7. 다중 조건 정렬 사용 예시 - 아이템
             List<ItemInfo> r_list_iteminfo = new List<ItemInfo>();
-            int _create_amount = 20;
+            int _create_amount = 2000;
             for (int i = 0; i < 5; i++)
                 r_list_iteminfo.Add(new ItemInfo(r_list_iteminfo.Count, ITEM.MAN_T1_GLOVE_1_E, true));
 
